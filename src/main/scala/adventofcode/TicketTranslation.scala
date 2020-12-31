@@ -42,7 +42,7 @@ object TicketTranslation extends App with ProgramWithSource {
   println(nearByCorrectTickets.size)
   var correctFields = mutable.Map[Int, Set[String]]()
 
-  for (fieldCount <- 0 until nearByCorrectTickets.head.length) {
+  for (fieldCount <- nearByCorrectTickets.head.indices) {
     requirements.foreach { requirement =>
       if (nearByCorrectTickets.map(numbers => {
 //        println(s"will try to find in array ${numbers.mkString(",")} number no position ${fieldCount}")
